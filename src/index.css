@@ -128,6 +128,31 @@ All colors MUST be HSL.
   }
 
   /* Custom animations */
+  
+  /* Add the wave animation for recording visualization */
+  @keyframes wave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(2); }
+  }
+
+  .wave-bar {
+    animation: wave 1s ease-in-out infinite;
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
   @keyframes pulse-glow {
     0%, 100% { 
       box-shadow: var(--recording-glow);
