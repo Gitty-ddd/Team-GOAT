@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -68,6 +69,15 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)'
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)',
+				'elegant': 'var(--shadow-elegant)',
+				'recording': 'var(--recording-glow)'
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -84,11 +94,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: 'var(--recording-glow)',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						boxShadow: '0 0 30px hsl(263 70% 50% / 0.8)',
+						transform: 'scale(1.05)'
+					}
+				},
+				'wave': {
+					'0%, 100%': { transform: 'scaleY(1)' },
+					'50%': { transform: 'scaleY(1.5)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'wave': 'wave 1s ease-in-out infinite'
 			}
 		}
 	},
